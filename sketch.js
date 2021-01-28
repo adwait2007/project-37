@@ -1,9 +1,8 @@
-var canvas;
 var gameState=0;
 var contestantCount,database,quiz,question,contestant;
 
 function setup(){
-  canvas = createCanvas(850,400);
+   createCanvas(850,400);
 
   database=firebase.database();
 
@@ -16,11 +15,12 @@ function setup(){
 
 function draw(){
   background("pink");
-
-  if(contestantCount === 4){
-    quiz.update(1);
+  
+  if(contestantCount===4){
+    gameState.update(1);
   }
-  if(gameState === 1){
+
+  if(gameState===1){
     clear();
     quiz.play();
   }

@@ -28,6 +28,31 @@ class Quiz{
           question=new Question();
           question.display();
       }
-  }    
+  }
+  
+  play(){
+      background("yellow");
+
+      textSize(30);
+      text("Result of Quiz ",350,0);
+
+      getContestantInfo();
+
+      if(allcontestant !== undefined){
+          textSize(20);
+          text("Note:Contestant who have answer correct are in green color.",150,230);
+
+          for(var plr in allcontestant){
+              var correctAns="2";
+          if(correctAns===allcontestant[plr].answer){
+              fill("green");
+           }
+           else{
+               fill("red");
+           }
+          }
+      }
+      
+  }
 
 }

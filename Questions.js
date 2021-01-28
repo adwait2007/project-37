@@ -1,20 +1,21 @@
 class Question{
     constructor(){
-        this.input1=null;
-        this.input2=null;
-        this.title=null;
-        this.question=null;
-        this.option1=null;
-        this.option2=null;
-        this.option3=null;
-        this.option4=null;
+        this.input1=createInput("Your Name");
+        this.input2=createInput("Your Answer");
+        this.title=createElement('h2');
+        this.question=createElement('h3');
+        this.option1=createElement('h3');
+        this.option2=createElement('h3');
+        this.option3=createElement('h3');
+        this.option4=createElement('h3');
+        this.button=createButton("Submit");
     }
-    diplay(){
+    display(){
         this.title.html("My Quiz Game");
         this.title.position(350,0);
 
         this.question.html("Question:-What start and ends with letter 'E' but which has letter 'L' in between those 2 'E'? ")
-        this.question.position(150,80);
+        this.question.position(60,80);
 
         this.option1.html("1.Everyone");
         this.option1.position(150,100);
@@ -28,10 +29,22 @@ class Question{
         this.option4.html("4.Everything");
         this.option4.position(150,160);
 
-        this.input1=createInput("Write Your Name Here");
         this.input1.position(150,230);
 
-        this.input2=createInput("Write Your Answer ");
-        this.input2.position(250,230);
+        this.input2.position(350,230);
+
+        this.button.position(300,300);
+
+        this.button.mousePressed(()=>{
+            this.title.hide();
+            this.input1.hide();
+            this.input2.hide();
+            contestant.name=this.input1.value();
+            contestant.answer=this.input2.value();
+            contestantCount+=1;
+            contestant.index=contestantCount;
+            contestant.update();
+            contestant.updateCount(contestantCount);
+        })
     }
 }

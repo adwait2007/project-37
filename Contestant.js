@@ -36,10 +36,6 @@ class Contestant{
         });
 
       }
-
-      display(){
-        this.button.position(200,300)
-      }
     
 }
       
