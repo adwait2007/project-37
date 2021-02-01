@@ -10,6 +10,14 @@ class Question{
         this.option4=createElement('h3');
         this.button=createButton("Submit");
     }
+
+    hide(){
+        this.title.hide();
+        this.input1.hide();
+        this.button.hide();
+        this.input2.hide();
+    }
+
     display(){
         this.title.html("My Quiz Game");
         this.title.position(350,0);
@@ -36,9 +44,7 @@ class Question{
         this.button.position(300,300);
 
         this.button.mousePressed(()=>{
-            this.title.hide();
-            this.input1.hide();
-            this.input2.hide();
+            this.button.hide();
             contestant.name=this.input1.value();
             contestant.answer=this.input2.value();
             contestantCount+=1;

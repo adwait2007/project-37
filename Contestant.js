@@ -1,9 +1,9 @@
 class Contestant{
     constructor(){
         this.index=null;
-        this.distance=null;
+        this.answer=null;
         this.name=null;
-        this.button=createButton("Submit");
+      
     }
 
       getCount(){
@@ -24,7 +24,7 @@ class Contestant{
          var contestantIndex = "contestant/contestant" + this.index;
          database.ref(contestantIndex).set({
           name:this.name,
-          distance:this.distance
+          answer:this.answer
         });
       }
     

@@ -30,29 +30,35 @@ class Quiz{
       }
   }
   
-  play(){
-      background("yellow");
+   end(){
+       background("yellow");
 
-      textSize(30);
-      text("Result of Quiz ",350,0);
+       question.hide();
 
-      getContestantInfo();
+       textSize(30);
+       text("Result Of Quiz",350,45);
 
-      if(allcontestant !== undefined){
-          textSize(20);
-          text("Note:Contestant who have answer correct are in green color.",150,230);
+       Contestant.getContestantInfo();
 
-          for(var plr in allcontestant){
-              var correctAns="2";
-          if(correctAns===allcontestant[plr].answer){
-              fill("green");
+       if(allcontestant!==undefined){
+           textSize(20);
+           text("'Note:Contestant who have answer correct are in green color !'",150,210);
+
+           for(var plr in allcontestant){
+               var correctAns="2";
+               if(correctAns===allcontestant[plr].answer){
+				   fill("green");
+			   }
+			   else{
+				   fill("red");
+			   
+			   display_Answer+=30;
+			   textSize(20);
+			   text(allcontestant[plr].name+":"+allcontestant[plr].answer,200,display_Answer+220);
+			   }
            }
-           else{
-               fill("red");
-           }
-          }
-      }
-      
-  }
+
+       }
+   }
 
 }
