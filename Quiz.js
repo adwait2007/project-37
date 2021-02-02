@@ -35,27 +35,33 @@ class Quiz{
 
        question.hide();
 
+       fill(0);
        textSize(30);
        text("Result Of Quiz",350,45);
+       text("----------------------------",320,65);
 
        Contestant.getContestantInfo();
 
        if(allcontestant!==undefined){
+           debugger;
+           var display_Answer=230;
+           fill("blue");
            textSize(20);
            text("'Note:Contestant who have answer correct are in green color !'",150,210);
 
            for(var plr in allcontestant){
+               debugger;
                var correctAns="2";
-               if(correctAns===allcontestant[plr].answer){
+               if(correctAns===allcontestant[plr].answer)
 				   fill("green");
-			   }
-			   else{
+			   
+			   else
 				   fill("red");
 			   
 			   display_Answer+=30;
 			   textSize(20);
-			   text(allcontestant[plr].name+":"+allcontestant[plr].answer,200,display_Answer+220);
-			   }
+			   text(allcontestant[plr].name+":"+allcontestant[plr].answer,250,display_Answer);
+			   
            }
 
        }

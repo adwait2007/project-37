@@ -1,7 +1,7 @@
 var gameState=0;
 var contestantCount,database,quiz,question,contestant;
 var allcontestant;
-var display_Answer=30;
+
 
 function setup(){
    createCanvas(850,400);
